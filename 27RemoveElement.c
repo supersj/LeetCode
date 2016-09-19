@@ -16,7 +16,8 @@ int removeElement(int* nums, int numsSize, int val) {
 	
 	int start = 0;
 	int end = numsSize - 1;
-	int tmp;
+
+	// head and tail pointer and to meet in the medium ~ 
 	while(1){
 		while(nums[end] == val && end>=start)
 			end--;
@@ -25,9 +26,7 @@ int removeElement(int* nums, int numsSize, int val) {
 			start++;
 		if (start<end)
 		{
-			tmp = nums[start];
-			nums[start] = nums[end];
-			nums[end] = tmp;
+			swap(nums+start,nums+end);
 		}else{
 			break;
 		}

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int removeDuplicates(int* nums, int numsSize) {
-	
+
 	if (numsSize < 2)
 	{
 		return numsSize;
@@ -12,7 +12,7 @@ int removeDuplicates(int* nums, int numsSize) {
 	int tmp = nums[i++];
     for (j = 1; j < numsSize; ++j)
     {
-    	if (nums[j] != tmp)	
+    	if (nums[j] != tmp)
     	{
     		nums[i++] = nums[j];
     		tmp = nums[j];

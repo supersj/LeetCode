@@ -25,6 +25,24 @@ void Print(struct ListNode* head){
   }
 }
 
+struct ListNode* swapPairs(struct ListNode* head) {
+  struct ListNode * cur,*tail;
+  if (head==NULL || head->next ==NULL) {
+    return head;
+  }
+  cur = head;tail = head->next;
+  do{
+    int tmp = cur->val;
+    cur->val = tail->val;
+    tail->val = tmp;
+    if (!tail->next) {
+      break;
+    }
+    cur = tail->next;
+    tail = cur->next;
+  }while(cur&&tail);
+  return head;
+}
 // boolen hasCycle(struct ListNode *head) {
 //   struct ListNode  *slow = head, *fast = head;
 //
@@ -81,7 +99,7 @@ struct ListNode* reverseList(struct ListNode* head) {
 int main(int argc, char const *argv[]) {
   int elements[] = {1,2,3,4,5};
   struct ListNode * head  = createList(elements, 5);
-  struct ListNode * revers = reverseList( head);
-  // Print(revers);
+  struct ListNode * revers = swapPairs(head);
+  Print(revers);
   return 0;
 }

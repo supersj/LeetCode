@@ -20,11 +20,23 @@ void deleteNode(struct ListNode* node) {
 }
 void Print(struct ListNode* head){
   while (head!=NULL) {
-    printf("%d\n", head->val);
+    printf("%d    %p\n", head->val,head);
     head = head->next;
   }
 }
 
+// boolen hasCycle(struct ListNode *head) {
+//   struct ListNode  *slow = head, *fast = head;
+//
+//     while ( fast && fast->next )
+//     {
+//         slow = slow->next;
+//         fast = fast->next->next;
+//         if ( slow == fast ) break;
+//     }
+//
+//     return !(fast == NULL || fast->next == NULL);
+// }
 
 struct ListNode* createList(int elements[],int numbers){
   struct ListNode * start = NULL;

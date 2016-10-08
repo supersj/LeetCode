@@ -25,5 +25,5 @@ vector<string> binaryTreePaths(TreeNode* root) {
 
     binaryTreePaths(result, root, to_string(root->val));
     return result;
-}
+    }
 };

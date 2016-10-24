@@ -34,6 +34,7 @@ public:
             return ;
         }
         int p=d[k]-'0';
+        // if there is one 1 then the answer is zero
         for(int i=0;i<len[p];i++)
         {
             string save = tmp;

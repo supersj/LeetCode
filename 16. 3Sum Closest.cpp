@@ -1,7 +1,11 @@
+#include <iostream>
+#include <vector>
+#include "algorithm.h"
+using namespace std;
 class Solution {
 public:
     int threeSumClosest(vector<int> &num, int target) {
-    vector<int> v(num.begin(), num.end());
+   vector<int> v(num.begin(), num.end());
     int n = 0;
     int ans = 0;
     int sum;

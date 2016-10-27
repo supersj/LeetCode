@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <memory.h>
+#include <bitset>
 using namespace std;
 
 class Solution {
@@ -43,6 +44,29 @@ public:
             memset(row,false,sizeof(row));
             memset(cloum, false, sizeof(cloum));
             memset(c, false, sizeof(c));
+        }
+        return true;
+    }
+       bool isValidSudoku2(vector<vector<char>>& board) {
+        int row[9] = {0};
+        int cloum[9] = {0};
+        int c[9] = {0};
+        int idx = 0;
+        for (int i = 0; i < 9; ++i)
+        {
+            for (int j = 0; j<9; ++j)
+            {   
+                if (board[i][j] != '.')
+                {
+                    idx = 1 << (board[i][j] - '0') ;
+                    if ((row[i] & idx) > 0 ||
+                        (cloum[j] & idx) > 0 ||
+                        (c[(i / 3) * 3 + j / 3] & idx) > 0) return false;
+                    row[i] |= idx;
+                    cloum[j] |= idx;
+                    c[(i / 3) * 3 + j / 3] |= idx;
+                }    
+            }
         }
         return true;
     }
